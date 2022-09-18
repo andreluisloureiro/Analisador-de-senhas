@@ -251,8 +251,8 @@ header{
     display: flex;
     align-items: center;
     justify-content: center; 
-    position: absolute;
-    bottom: 5px;
+    position: flex;
+    margin-top: 50px;
     width: 80vw;
 }
 .warningStudent {
