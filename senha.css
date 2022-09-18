@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background-size: 250% 250%;
+    transition: 250ms;
+    scroll-behavior: smooth;
+    background-color: white;
+}
+
+
+.pbDiv.five{
+    width: 5%;
+}
+.pbDiv.ten{
+    width: 10%;
+}
+.pbDiv.fifteen{
+    width: 15%;
+}
+.pbDiv.twenty{
+    width: 20%;
+}
+.pbDiv.thirty{
+    width: 30%;
+}
+.pbDiv.forty{
+    width: 40%;
+}
+.pbDiv.fifty{
+    width: 50%;
+}
+.pbDiv.sixty{
+    width: 60%;
+}
+.pbDiv.seventy{
+    width: 70%;
+}
+.pbDiv.eighty{
+    width: 80%;
+}
+.pbDiv.ninety{
+    width: 90%;
+}
+.pbDiv.oneHundred{
+    animation: easterEgg 3s ease-in-out infinite;
+    width: 0%;
+    background-color: red;
+    transition: 300ms;  
+}
+
+
+
+p{
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+.headerDiv {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 70vw;
+    margin:10px;
+}
+
+.headerImg {
+    width: 50px;
+}
+
+.headerText {
+    text-align: center;
+    color: rgb(230, 105, 59);
+    font-weight: 600;
+    margin-left: 10px;
+    width: auto;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.introDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: rgb(230, 105, 59);
+    width: 100%;
+    height: 20vw;
+}
+
+.textsIntro {
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    text-align: left;
+    flex-direction: column;
+    width: 40vw; 
+}
+
+.titleIntro {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-direction: row;
+    font-size: max(3vw, 15px);
+    margin: 0px;
+    margin-bottom:0px;
+    font-weight: 700;
+}
+
+:root {
+    --containner-height: max(1.6vw, 8px);
+}
+
+.textIntro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    font-size: var(--containner-height);
+    margin: 0px;
+    margin-top: 1vw;
+    margin-bottom: 1vw; 
+}
+
+.warningIntro {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-direction: row;
+    font-size: var(--containner-height);
+    margin: 0px;
+}
+
+.imageDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px;
+}
+
+.imageIntro {
+    height: 25vw;
+}
+
+.uxDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 8vw;
+    width: 30vw;
+}
+
+.inputDiv {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center; 
+    flex-direction: column;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50vw; 
+    height: 3vw; 
+    border-radius: 0px;
+    border: 1px solid rgb(134, 132, 132);
+    font-size: 2vw;
+    font-family: 'Roboto Condensed', sans-serif;
+    padding: 5px;
+}
+
+
+.pbDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 0%;
+    margin-top: 0.5vw;
+    height: 0.5vw; 
+    border-radius: 0px;
+    background-color:rgb(134, 132, 132) ;
+    border: 0px solid rgb(134, 132, 132); 
+    background-image: url(https://password.kaspersky.com/content/themes/passchck/img/progress-bar.png);
+    background-position: left;
+    background-size: cover;
+    transition: 500ms ease-in-out;   
+}
+
+
+@keyframes easterEgg {
+    0%{width: 0%;}
+    50% {width: 110%;}
+    100%{width: 0%;}
+}
+
+.divFeedback{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    scale: 1;
+    width: 150%;
+}
+
+.feedBack{
+    color: black;
+    font-weight: 700;
+    scale: 0.3;
+    transform-origin: center;
+    transition: 600ms ease-in-out;
+    text-align: center;
+    width: 100%;
+    opacity: 0%;
+}
+
+.feedBack.appear{
+    scale: 1;
+    opacity: 100%;
+    transform-origin: center;
+}
+
+.feedBack.easterEgg{
+    animation: easter 3s ease-in-out infinite;
+    margin: 0px;
+    height: 0px;
+}
+
+
+@keyframes easter {
+    0%{transform: rotate(0deg)}
+    50% {transform: rotate(360deg)}
+    100%{transform: rotate(0deg)}
+}
+
+.divWarningStudent{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    position: absolute;
+    bottom: 5px;
+    width: 80vw;
+}
+.warningStudent {
+    color: rgb(71, 71, 71);
+    font-size: 13px;
+    text-align: center;
+}
+
+@media (max-width : 480px) {
+    :root {
+        --containner-height: max(1.6vw, 18px);
+    }
+
+    .headerDiv {
+        width: 90vw;
+       
+    }
+    
+    .introDiv {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        background-color: rgb(230, 105, 59);
+        width: 100%;
+        height: 60vw;
+        margin-bottom: 20vw;
+    }
+    
+    .textsIntro {
+        display: flex;
+        align-items: left;
+        justify-content: center;
+        text-align: left;
+        flex-direction: column;
+        width: 70vw; 
+    }
+
+    .titleIntro {
+        font-size: max(3vw, 22px);
+    }
+    
+    .imageDiv {
+        display: none;
+    }
+    
+    .imageIntro {
+        height: 25vw;
+    }
+    
+
+    .input {
+        width: 80vw; 
+        height: 10vw; 
+        font-size: 8vw;
+    }
+
+    .pbDiv {
+        margin-top: 5px;
+        height: 2vw; 
+    }
+
+    .divFeedback{
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        scale: 1;
+        width: 80vw;
+    }
+}
