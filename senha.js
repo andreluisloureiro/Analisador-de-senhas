@@ -76,26 +76,27 @@ function check() {
     element.classList.remove("easterEgg") 
     }
     var space = /\s/
-    var lessThanEight = /^[0-9a-zA-Z\d@$!%*#?&]{1,7}$/
+    var lessThanEight = /^[0-9a-zA-Z\d@$!%¨*?&#()"'¨-]{1,7}$/
     var justNumbersOver8 = /^[0-9]{8,}$/;
     var justLettersOver8 = /^[A-Za-z]{8,}$/;
+    var justSpecialOver8 = /^[@$!%¨*?&#()"'¨-]{7,}$/;
     var numbersAndLowerCase = /^(?=.*[a-z])(?=.*\d)[a-z\d]{8,}$/;
     var numbersAndUpperCase = /^(?=.*[A-Z])(?=.*\d)[A-Z\d]{8,}$/;
     var numbersUpperLower = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
-    var numbersLowerSpecial = /^(?=.*[a-z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&#])[a-za-z\d@$!%*?&#]{8,}$/;
-    var numbersUpperSpecial = /^(?=.*[A-Z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-ZA-Z\d@$!%*?&#]{8,}$/;
-    var numbersSpecial = /^(?=.*\d)(?=.*[@$!%*?&#])[\d@$!%*?&#]{8,}$/;
-    var UpperSpecial = /^(?=.*[A-Z])(?=.*)(?=.*[@$!%*?&])[A-Z@$!%*?&]{8,}$/;
-    var LowerSpecial = /^(?=.*[a-z])(?=.*)(?=.*[@$!%*?&])[a-z@$!%*?&]{8,}$/;
-    var UpperLowerSpecial = /^(?=.*[A-Z])(?=.*[a-z])(?=.*)(?=.*[@$!%*?&])[A-Za-z@$!%*?&]{8,}$/;
+    var numbersLowerSpecial = /^(?=.*[a-z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%¨*?&#()"'¨-])[a-za-z\d@$!%¨*?&#()"'¨-]{8,}$/;
+    var numbersUpperSpecial = /^(?=.*[A-Z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%¨*?&#()"'¨-])[A-ZA-Z\d@$!%¨*?&#()"'¨-]{8,}$/;
+    var numbersSpecial = /^(?=.*\d)(?=.*[@$!%¨*?&#()"'¨-])[\d@$!%¨*?&#()"'¨-]{8,}$/;
+    var UpperSpecial = /^(?=.*[A-Z])(?=.*)(?=.*[@$!%¨*?&#()"'¨-])[A-Z@$!%¨*?&#()"'¨-]{8,}$/;
+    var LowerSpecial = /^(?=.*[a-z])(?=.*)(?=.*[@$!%¨*?&#()"'¨-])[a-z@$!%¨*?&#()"'¨-]{8,}$/;
+    var UpperLowerSpecial = /^(?=.*[A-Z])(?=.*[a-z])(?=.*)(?=.*[@$!%¨*?&#()"'¨-])[A-Za-z@$!%¨*?&#()"'¨-]{8,}$/;
     var numbersUpper2Special = /a/;
     var numbersLower2Special = /a/;
-    var LessThanTwelve = /^[0-9a-zA-Z\d@$!%*#?&]{1,11}$/
-    var LessThanEighteen = /^[0-9a-zA-Z\d@$!%*#?&]{1,17}$/
-    var numbersUpperLowerSpecial = /^(?=.{8})(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?:[a-zA-z\d]*[@$!%*?&#():=]){1}[a-zA-Z\d]*$/;
-    var numbersUpperLower2Special = /^(?=.{8})(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?:[a-zA-z\d]*[@$!%*?&#():=]){2}[a-zA-Z\d@$!%*?&#]*$/
-    var numbersUpperLower2Special12 = /^(?=.{11})(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?:[a-zA-z\d]*[@$!%*?&#():=]){2}[a-zA-Z\d@$!%*?&#]*$/;
-    var numbersUpperLower2Special18 = /^(?=.{17})(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?:[a-zA-z\d]*[@$!%*?&#():=]){2}[a-zA-Z\d@$!%*?&#]*$/;
+    var LessThanTwelve = /^[0-9a-zA-Z\d@$!%¨*?&#()"'¨-]{1,11}$/
+    var LessThanEighteen = /^[0-9a-zA-Z\d@$!%¨*?&#()"'¨-]{1,17}$/
+    var numbersUpperLowerSpecial = /^(?=.{8})(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?:[a-zA-z\d]*[@$!%¨*?&#()"'¨-]){1}[a-zA-Z\d]*$/;
+    var numbersUpperLower2Special = /^(?=.{8})(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?:[a-zA-z\d]*[@$!%¨*?&#()"'¨-]){2}[a-zA-Z\d@$!%¨*?&#()"'¨-]*$/
+    var numbersUpperLower2Special12 = /^(?=.{11})(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?:[a-zA-z\d]*[@$!%¨*?&#()"'¨-]){2}[a-zA-Z\d@$!%¨*?&#()"'¨-]*$/;
+    var numbersUpperLower2Special18 = /^(?=.{17})(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?:[a-zA-z\d]*[@$!%¨*?&#()"'¨-]){2}[a-zA-Z\d@$!%¨*?&#()"'¨-]*$/;
     var easterEgg = /^Abaixo uma senha para ser analisada por um site estático e sem banco de dados./g
     if (lessThanEight.test(text) === true) {
         pbDiv.classList.add("five")
@@ -103,7 +104,10 @@ function check() {
     } else if (justLettersOver8.test(text) === true) {
         pbDiv.classList.add("ten")
         textChange("É recomendável misturar letras e números na sua senha.")
-    } else if (justNumbersOver8.test(text) === true) {
+    }else if (justSpecialOver8.test(text) === true) {
+        pbDiv.classList.add("ten")
+        textChange("É recomendável misturar letras e números na sua senha.")
+    }else if (justNumbersOver8.test(text) === true) {
         pbDiv.classList.add("ten")
         textChange("É recomendável misturar letras e números na sua senha.")
     } else if (numbersAndLowerCase.test(text) === true) {
