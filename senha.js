@@ -174,5 +174,21 @@ function check() {
     }
 }
 
+var eye = document.getElementsByClassName("eye")[0];
+eye.addEventListener("click", teste)
+
+function teste() {
+    eye.classList.toggle("anim")
+
+
+    if (input.type === "text") { 
+        input.type = "password";
+    } else {
+        input.type = "text" }
+    
+    
+}
+
+
 
 
