@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap');
 
+
+
 body {
     margin: 0;
     padding: 0;
@@ -172,6 +174,10 @@ header{
     flex-direction: column;
 }
 
+textarea:focus, input:focus{
+    outline: none;
+}
+
 .input {
     display: flex;
     align-items: center;
@@ -179,11 +185,79 @@ header{
     width: 50vw; 
     height: 3vw; 
     border-radius: 0px;
-    border: 1px solid rgb(134, 132, 132);
+    border: 0px solid rgb(134, 132, 132);
     font-size: 2vw;
     font-family: 'Roboto Condensed', sans-serif;
     padding: 5px;
 }
+
+.teste {
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    border: 1px solid rgb(134, 132, 132); 
+}
+.size {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    height: 20px;
+    scale: 1.5;
+    width: 20px;
+    margin: 10px;
+}
+
+.eye {
+    color:rgb(54, 54, 54);
+    position: absolute;
+    align-items: center;
+    justify-content: center; 
+    margin-left: 3px;
+    margin-top: 3px;
+    width: 12px;
+    height: 12px;
+    border-radius: 70% 15%;
+    transition: 300ms;
+    margin: 5px;
+    border: solid 1px currentColor;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            
+  }
+
+  .eye:before {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    border: solid 1px currentColor;
+  }
+
+  .eye:after {
+    content: '';
+    position: absolute;
+    transition: 300ms;
+    width: 2px;
+    height: 15px;
+    transform:translate(5px, -1.5px);
+    border-radius: 100%;
+    background-color:rgb(54, 54, 54);
+  }
+
+    
+   .eye.anim:after{
+    content: '';
+    position: absolute;
+    width: 1.5px;
+    height: 0px;
+    border-radius: 100%;
+    transform:translate(5px, -1.5px);
+    background-color:rgb(54, 54, 54);
+  }
 
 
 .pbDiv {
@@ -322,4 +396,12 @@ header{
         scale: 1;
         width: 80vw;
     }
+}
+
+
+@media (min-width : 1800px) {
+.size {
+    scale: 2.5;
+    margin: 20px;
+}
 }
