@@ -12,58 +12,70 @@ body {
     background-color: white;
 }
 
+.pbDiv.zero {
+    width: 0%;
+}
 
-.pbDiv.five{
+.pbDiv.five {
     width: 5%;
 }
-.pbDiv.ten{
+
+.pbDiv.ten {
     width: 10%;
 }
-.pbDiv.fifteen{
+
+.pbDiv.fifteen {
     width: 15%;
 }
-.pbDiv.twenty{
+
+.pbDiv.twenty {
     width: 20%;
 }
-.pbDiv.thirty{
+
+.pbDiv.thirty {
     width: 30%;
 }
-.pbDiv.forty{
+
+.pbDiv.forty {
     width: 40%;
 }
-.pbDiv.fifty{
+
+.pbDiv.fifty {
     width: 50%;
 }
-.pbDiv.sixty{
+
+.pbDiv.sixty {
     width: 60%;
 }
-.pbDiv.seventy{
+
+.pbDiv.seventy {
     width: 70%;
 }
-.pbDiv.eighty{
+
+.pbDiv.eighty {
     width: 80%;
 }
-.pbDiv.ninety{
+
+.pbDiv.ninety {
     width: 90%;
 }
-.pbDiv.oneHundred{
+
+.pbDiv.oneHundred {
     animation: easterEgg 3s ease-in-out infinite;
     width: 0%;
     background-color: red;
-    transition: 300ms;  
+    transition: 300ms;
 }
 
-
-
-p{
+p {
     color: white;
     font-family: 'Roboto Condensed', sans-serif;
 }
 
-header{
+header {
     display: flex;
     align-items: center;
-    justify-content: center;    
+    justify-content: center;
 }
 
 .headerDiv {
@@ -71,7 +83,7 @@ header{
     align-items: center;
     justify-content: left;
     width: 70vw;
-    margin:10px;
+    margin: 10px;
 }
 
 .headerImg {
@@ -109,7 +121,7 @@ header{
     justify-content: center;
     text-align: left;
     flex-direction: column;
-    width: 40vw; 
+    width: 40vw;
 }
 
 .titleIntro {
@@ -119,7 +131,7 @@ header{
     flex-direction: row;
     font-size: max(3vw, 15px);
     margin: 0px;
-    margin-bottom:0px;
+    margin-bottom: 0px;
     font-weight: 700;
 }
 
@@ -135,7 +147,7 @@ header{
     font-size: var(--containner-height);
     margin: 0px;
     margin-top: 1vw;
-    margin-bottom: 1vw; 
+    margin-bottom: 1vw;
 }
 
 .warningIntro {
@@ -170,11 +182,12 @@ header{
 .inputDiv {
     display: flex;
     align-items: flex-start;
-    justify-content: center; 
+    justify-content: center;
     flex-direction: column;
 }
 
-textarea:focus, input:focus{
+textarea:focus,
+input:focus {
     outline: none;
 }
 
@@ -182,8 +195,8 @@ textarea:focus, input:focus{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50vw; 
-    height: 3vw; 
+    width: 50vw;
+    height: 3vw;
     border-radius: 0px;
     border: 0px solid rgb(134, 132, 132);
     font-size: 2vw;
@@ -194,14 +207,15 @@ textarea:focus, input:focus{
 .teste {
     display: flex;
     align-items: center;
-    justify-content: center;   
-    border: 1px solid rgb(134, 132, 132); 
+    justify-content: center;
+    border: 1px solid rgb(134, 132, 132);
 }
+
 .size {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;  
+    justify-content: center;
     height: 20px;
     scale: 1.5;
     width: 20px;
@@ -209,10 +223,10 @@ textarea:focus, input:focus{
 }
 
 .eye {
-    color:rgb(54, 54, 54);
+    color: rgb(54, 54, 54);
     position: absolute;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
     margin-left: 3px;
     margin-top: 3px;
     width: 12px;
@@ -222,11 +236,11 @@ textarea:focus, input:focus{
     margin: 5px;
     border: solid 1px currentColor;
     -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
-            
-  }
+    transform: rotate(45deg);
 
-  .eye:before {
+}
+
+.eye:before {
     content: '';
     position: absolute;
     left: 2px;
@@ -235,29 +249,29 @@ textarea:focus, input:focus{
     height: 6px;
     border-radius: 50%;
     border: solid 1px currentColor;
-  }
+}
 
-  .eye:after {
+.eye:after {
     content: '';
     position: absolute;
     transition: 300ms;
     width: 2px;
     height: 15px;
-    transform:translate(5px, -1.5px);
+    transform: translate(5px, -1.5px);
     border-radius: 100%;
-    background-color:rgb(54, 54, 54);
-  }
+    background-color: rgb(54, 54, 54);
+}
 
-    
-   .eye.anim:after{
+
+.eye.anim:after {
     content: '';
     position: absolute;
     width: 1.5px;
     height: 0px;
     border-radius: 100%;
-    transform:translate(5px, -1.5px);
-    background-color:rgb(54, 54, 54);
-  }
+    transform: translate(5px, -1.5px);
+    background-color: rgb(54, 54, 54);
+}
 
 
 .pbDiv {
@@ -266,32 +280,150 @@ textarea:focus, input:focus{
     justify-content: center;
     width: 0%;
     margin-top: 0.5vw;
-    height: 0.5vw; 
+    margin-bottom: 0.5vw;
+    height: 0.5vw;
     border-radius: 0px;
-    background-color:rgb(134, 132, 132) ;
-    border: 0px solid rgb(134, 132, 132); 
+    background-color: rgb(134, 132, 132);
+    border: 0px solid rgb(134, 132, 132);
     background-image: url(https://password.kaspersky.com/content/themes/passchck/img/progress-bar.png);
     background-position: left;
     background-size: cover;
-    transition: 500ms ease-in-out;   
+    transition: 500ms ease-in-out;
 }
 
 
 @keyframes easterEgg {
-    0%{width: 0%;}
-    50% {width: 110%;}
-    100%{width: 0%;}
+    0% {
+        width: 0%;
+    }
+
+    50% {
+        width: 110%;
+    }
+
+    100% {
+        width: 0%;
+    }
 }
 
-.divFeedback{
+.iconsDiv {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    height: 5vw;
+    min-height: 50px;
+    transform: scale(1);
+    margin-top: 3vw;
+    margin-bottom: 2.2vw;
+}
+
+
+.box {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: rgb(230, 105, 59) solid 0px;
+    padding: 0px;
+    height: 0vw;
+    min-height: 0px;
+    min-width: 50px;
+    width: 5vw;
+    border-radius: max(0.5vw, 8px);
+    margin: 10px;
+    transition: 300ms;
+    scale: 1;
+    font-size: 0px;
+}
+
+.box.appear {
+    font-size: 0px;
+    scale: 1;
+    border: #dd5c5c solid 2px;
+    padding: 5px;
+    height: 6vw;
+    min-height: 65px;
+    margin: 10px;
+}
+
+
+.box.green {
+    border: #5cb65c solid 3px;
+}
+
+.box.red {
+    border: #dd5c5c solid 3px;
+}
+
+.fa-solid {
+    height: 0vw;
+    min-height: 0px;
+    filter: invert(81%) sepia(67%) saturate(3784%) hue-rotate(310deg) brightness(79%) contrast(128%);
+    transition: 400ms;
+    opacity: 0%;
+}
+
+.fa-solid.appear {
+    height: 2.5vw;
+    min-height: 30px;
+    opacity: 100%;
+    filter: invert(81%) sepia(67%) saturate(3784%) hue-rotate(310deg) brightness(79%) contrast(128%);
+}
+
+.fa-solid.green {
+    height: 2.5vw;
+    min-height: 30px;
+    opacity: 100%;
+    filter: invert(56%) sepia(79%) saturate(302%) hue-rotate(71deg) brightness(96%) contrast(88%);
+}
+
+.p {
+    display: flex;
+    margin: 0px;
+    margin-top: 5px;
+    font-size: max(0vw, 0px);
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: rgb(230, 105, 59);
+    width: 0.3vw;
+    height: 0vw;
+    justify-content: center;
+    align-items: center;
+    opacity: 0%;
+    transition: 300ms;
+}
+
+.p.appear {
+    font-size: max(1vw, 12px);
+    color: rgb(230, 105, 59);
+    height: 3vw;
+    font-weight: 400;
+    opacity: 100%;
+}
+
+.p.green {
+    font-size: max(1vw, 12px);
+    color: #5cb65c;
+    font-weight: 700;
+    height: 3vw;
+    opacity: 100%;
+}
+
+
+
+.divFeedback {
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
     scale: 1;
     width: 150%;
+    height: 5vw;
 }
 
-.feedBack{
+.feedBack {
     color: black;
     font-weight: 700;
     scale: 0.3;
@@ -300,15 +432,17 @@ textarea:focus, input:focus{
     text-align: center;
     width: 100%;
     opacity: 0%;
+    margin: 0px;
+    font-size: max(1.3vw, 14px);
 }
 
-.feedBack.appear{
+.feedBack.appear {
     scale: 1;
     opacity: 100%;
     transform-origin: center;
 }
 
-.feedBack.easterEgg{
+.feedBack.easterEgg {
     animation: easter 3s ease-in-out infinite;
     margin: 0px;
     height: 0px;
@@ -316,19 +450,28 @@ textarea:focus, input:focus{
 
 
 @keyframes easter {
-    0%{transform: rotate(0deg)}
-    50% {transform: rotate(360deg)}
-    100%{transform: rotate(0deg)}
+    0% {
+        transform: rotate(0deg)
+    }
+
+    50% {
+        transform: rotate(360deg)
+    }
+
+    100% {
+        transform: rotate(0deg)
+    }
 }
 
-.divWarningStudent{
+.divWarningStudent {
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
     position: flex;
     margin-top: 50px;
     width: 80vw;
 }
+
 .warningStudent {
     color: rgb(71, 71, 71);
     font-size: 13px;
@@ -342,9 +485,9 @@ textarea:focus, input:focus{
 
     .headerDiv {
         width: 90vw;
-       
+
     }
-    
+
     .introDiv {
         display: flex;
         align-items: center;
@@ -355,53 +498,86 @@ textarea:focus, input:focus{
         height: 60vw;
         margin-bottom: 20vw;
     }
-    
+
     .textsIntro {
         display: flex;
         align-items: left;
         justify-content: center;
         text-align: left;
         flex-direction: column;
-        width: 70vw; 
+        width: 70vw;
     }
 
     .titleIntro {
         font-size: max(3vw, 22px);
     }
-    
+
     .imageDiv {
         display: none;
     }
-    
+
     .imageIntro {
         height: 25vw;
     }
-    
+
 
     .input {
-        width: 80vw; 
-        height: 10vw; 
+        width: 80vw;
+        height: 10vw;
         font-size: 8vw;
     }
 
     .pbDiv {
         margin-top: 5px;
-        height: 2vw; 
+        height: 2vw;
     }
 
-    .divFeedback{
+    .divFeedback {
         display: flex;
         align-items: center;
-        justify-content: center; 
+        justify-content: center;
         scale: 1;
         width: 80vw;
     }
+
+    .iconsDiv {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        height: 5vw;
+        min-height: 50px;
+        transform: scale(1);
+        margin-top: 9vw;
+        margin-bottom: 11.2vw;
+    }
+
+
+    .box.appear {
+        font-size: 0px;
+        scale: 1;
+        padding: 5px;
+        height: 6vw;
+        min-height: 65px;
+        margin: 4px;
+
+    }
+
+    .p.appear {
+        font-size: max(1vw, 12px);
+        height: 7vw;
+        font-weight: 400;
+        opacity: 100%;
+    }
+
+
 }
 
 
 @media (min-width : 1800px) {
-.size {
-    scale: 2.5;
-    margin: 20px;
-}
+    .size {
+        scale: 2.5;
+        margin: 20px;
+    }
 }
