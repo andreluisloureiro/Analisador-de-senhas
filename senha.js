@@ -1,17 +1,30 @@
 var input = document.getElementById('input')
 var pbDiv = document.getElementById("pbDiv")
+var box = document.getElementsByClassName("box")
+var fasolid = document.getElementsByClassName("fa-solid")
+var p = document.getElementsByClassName("p")
 
 var typingTimer
 input.addEventListener('keyup', () => {
     clearTimeout(typingTimer);
     if (input.value) {
-        typingTimer = setTimeout(delay, 700);
+        typingTimer = setTimeout(check, 700);
     }
 });
 
+var eye = document.getElementsByClassName("eye")[0];
+eye.addEventListener("click", eyeAnim)
+function eyeAnim() {
+    eye.classList.toggle("anim")
+    if (input.type === "text") {
+        input.type = "password";
+    } else {
+        input.type = "text"
+    }
+}
 
 input.addEventListener("keydown", (event) => {
-    if (event.key === "Backspace") {
+    if (event.key === "Backspace" || "Control") {
         typingTimer2 = setTimeout(removeBackspace, 700);
         function removeBackspace() {
             if (input.value === "") {
@@ -23,172 +36,177 @@ input.addEventListener("keydown", (event) => {
     }
 })
 
-input.addEventListener("keydown", (event) => {
-    if (event.key === "Control") {
-        typingTimer3 = setTimeout(removeBackspace, 0);
-        function removeBackspace() {
-            if (input.value === "") {
-                check()
+
+function check() {
+    var text = input.value
+    console.log(text.length)
+    if (text.length === 0) {
+        colors([0, 0, 0, 0, 0])
+        removeClasses()
+    } else {
+        for (var i = 0; i < 5; i++) {
+            box[i].classList.add("appear")
+            fasolid[i].classList.add("appear")
+            p[i].classList.add("appear")
+        }
+        var lessThanEight = /^.{0,7}$/
+        var numbers = /[0-9]/;
+        var upper = /[A-Z]/;
+        var lower = /[a-z]/;
+        var special = /(?:.*[\W]){1}/;
+        var special2 = /(?:.*[\W]){2}/;
+        var twelve = /^.{12,17}$/;
+        var eighteen = /^.{18,}$/;
+        var easterEgg = /^Abaixo uma senha para ser analisada por um site estático e sem banco de dados./g
+
+
+        var array = []
+        if (lessThanEight.test(text) === true) {
+            array.push(0)
+            textChange("Uma boa senha tem pelo menos 8 caracteres.")
+        } else {
+            array.push(1)
+            if (numbers.test(text) === true) {
+                array.push(1)
             } else {
-                return
+                array.push(0)
+            }
+
+            if (upper.test(text) === true) {
+                array.push(1)
+            } else {
+                array.push(0)
+            }
+
+            if (lower.test(text) === true) {
+                array.push(1)
+            } else {
+                array.push(0)
+            }
+
+            if (special.test(text) === true) {
+                array.push(1)
+
+            } else {
+                array.push(0)
+            }
+
+            if (special2.test(text) === true) {
+                array.push(1)
+
+            } else {
+                array.push(0)
+            }
+
+            if (eighteen.test(text) === true) {
+                array.push(1)
+
+            } else {
+                array.push(0)
+            }
+
+
+        }
+        colors(array)
+        console.log(array[5])
+        if (array[1] === 0) {
+            textChange("Tente adicionar números em sua senha")
+        } else {
+            if (array[2] === 0) {
+                textChange("Tente adicionar letras maiúsculas em sua senha")
+            } else {
+                if (array[3] === 0) {
+                    textChange("Tente adicionar letras minúsculas em sua senha")
+                } else {
+                    if (array[4] === 0) {
+                        textChange("Tente adicionar Caracteres Especiais")
+                    } else {
+                        if (array[1] === 1 && array[2] === 1 && array[3] === 1 && array[4] === 1) {
+                            if (array[5] === 0){
+                                textChange("Sua senha preenche os requisitos mínimos de qualidade. Para maior segurança é recomendável usar mais um caractere especial.")
+                            }else{
+                                if (array[6] === 0){
+                                    textChange("Sua senha ficaria mais complexa com 18 caracteres ou mais")
+                                }else{
+                                    textChange("Sua senha é ótima.")
+                                }
+                            }                         
+                         }
+                    }
+                }
             }
         }
     }
-})
-
-
-input.addEventListener("keydown", (event) => {
-    if (event.key === " ") {
-        return false;
-    }
-})
-
-
-function delay() {
-    progressBarAppears()
 }
 
-function progressBarAppears() {
-    if (input.value === "") {
-        pbDiv.classList.remove("aparecer")
-    } else if (input.value != "") {
-        check()
+function colors(w) {
+    const sum = w.reduce((partialSum, a) => partialSum + a, 0);
+    var classList = pbDiv.classList
+    while (classList.length > 1) {
+        classList.remove(classList.item(1))
     }
-}
-
-function check() {
-    var element = document.getElementById("feedBack")
-    var text = input.value
-    removeClasses()
-    function removeClasses() {
-    pbDiv.classList.remove("thirty")
-    pbDiv.classList.remove("twenty")
-    pbDiv.classList.remove("five")
-    pbDiv.classList.remove("ten")
-    pbDiv.classList.remove("forty")
-    pbDiv.classList.remove("sixty")
-    pbDiv.classList.remove("fifty")
-    pbDiv.classList.remove("fifteen")
-    pbDiv.classList.remove("eighty")
-    pbDiv.classList.remove("ninety")
-    pbDiv.classList.remove("oneHundred") 
-    element.classList.remove("appear")   
-    element.classList.remove("easterEgg") 
-    }
-    var space = /\s/
-    var lessThanEight = /^[0-9a-zA-Z\d@$!%¨*?&#()"'¨-]{1,7}$/
-    var justNumbersOver8 = /^[0-9]{8,}$/;
-    var justLettersOver8 = /^[A-Za-z]{8,}$/;
-    var justSpecialOver8 = /^[@$!%¨*?&#()"'¨-]{7,}$/;
-    var numbersAndLowerCase = /^(?=.*[a-z])(?=.*\d)[a-z\d]{8,}$/;
-    var numbersAndUpperCase = /^(?=.*[A-Z])(?=.*\d)[A-Z\d]{8,}$/;
-    var numbersUpperLower = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
-    var numbersLowerSpecial = /^(?=.*[a-z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%¨*?&#()"'¨-])[a-za-z\d@$!%¨*?&#()"'¨-]{8,}$/;
-    var numbersUpperSpecial = /^(?=.*[A-Z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%¨*?&#()"'¨-])[A-ZA-Z\d@$!%¨*?&#()"'¨-]{8,}$/;
-    var numbersSpecial = /^(?=.*\d)(?=.*[@$!%¨*?&#()"'¨-])[\d@$!%¨*?&#()"'¨-]{8,}$/;
-    var UpperSpecial = /^(?=.*[A-Z])(?=.*)(?=.*[@$!%¨*?&#()"'¨-])[A-Z@$!%¨*?&#()"'¨-]{8,}$/;
-    var LowerSpecial = /^(?=.*[a-z])(?=.*)(?=.*[@$!%¨*?&#()"'¨-])[a-z@$!%¨*?&#()"'¨-]{8,}$/;
-    var UpperLowerSpecial = /^(?=.*[A-Z])(?=.*[a-z])(?=.*)(?=.*[@$!%¨*?&#()"'¨-])[A-Za-z@$!%¨*?&#()"'¨-]{8,}$/;
-    var numbersUpper2Special = /a/;
-    var numbersLower2Special = /a/;
-    var LessThanTwelve = /^[0-9a-zA-Z\d@$!%¨*?&#()"'¨-]{1,11}$/
-    var LessThanEighteen = /^[0-9a-zA-Z\d@$!%¨*?&#()"'¨-]{1,17}$/
-    var numbersUpperLowerSpecial = /^(?=.{8})(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?:[a-zA-z\d]*[@$!%¨*?&#()"'¨-]){1}[a-zA-Z\d]*$/;
-    var numbersUpperLower2Special = /^(?=.{8})(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?:[a-zA-z\d]*[@$!%¨*?&#()"'¨-]){2}[a-zA-Z\d@$!%¨*?&#()"'¨-]*$/
-    var numbersUpperLower2Special12 = /^(?=.{11})(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?:[a-zA-z\d]*[@$!%¨*?&#()"'¨-]){2}[a-zA-Z\d@$!%¨*?&#()"'¨-]*$/;
-    var numbersUpperLower2Special18 = /^(?=.{17})(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?:[a-zA-z\d]*[@$!%¨*?&#()"'¨-]){2}[a-zA-Z\d@$!%¨*?&#()"'¨-]*$/;
-    var easterEgg = /^Abaixo uma senha para ser analisada por um site estático e sem banco de dados./g
-    if (lessThanEight.test(text) === true) {
-        pbDiv.classList.add("five")
-        textChange("Sua senha poderia ser maior.")
-    } else if (justLettersOver8.test(text) === true) {
+    console.log(sum)
+    if (sum === 2) {
         pbDiv.classList.add("ten")
-        textChange("É recomendável misturar letras e números na sua senha.")
-    }else if (justSpecialOver8.test(text) === true) {
-        pbDiv.classList.add("ten")
-        textChange("É recomendável misturar letras e números na sua senha.")
-    }else if (justNumbersOver8.test(text) === true) {
-        pbDiv.classList.add("ten")
-        textChange("É recomendável misturar letras e números na sua senha.")
-    } else if (numbersAndLowerCase.test(text) === true) {
-        pbDiv.classList.add("fifteen")
-        textChange("Tente misturar letras Maíusculas e minúsculas em sua senha.")
-    } else if (numbersAndUpperCase.test(text) === true) {
-        pbDiv.classList.add("fifteen")
-        textChange("Tente misturar letras Maíusculas e minúsculas em sua senha.")
-    } else if (numbersUpperLower.test(text) === true) {
-        pbDiv.classList.add("twenty")
-        textChange("Uma boa senha contém pelo menos um caractere especial.")
-    } else if (numbersLowerSpecial.test(text) === true | numbersUpperSpecial.test(text)) {
+    } else if (sum === 3) {
         pbDiv.classList.add("thirty")
-        textChange("É recomendável misturar letras Maíusculas e minúsculas.")
-    } else if (numbersSpecial.test(text) === true) {
-        pbDiv.classList.add("thirty")
-        textChange("Adicione letras para aumentar a complexidade da sua senha.")
-    } else if (UpperSpecial.test(text) === true || LowerSpecial.test(text) === true) {
-        pbDiv.classList.add("thirty")
-        textChange("Adicione números para aumentar a complexidade da sua senha.")
-    } else if (UpperLowerSpecial.test(text) === true) {
-        pbDiv.classList.add("thirty")
-        textChange("Adicione números para aumentar a complexidade da sua senha.")
-    } else if (numbersUpperLowerSpecial.test(text) === true) {
+    } else if (sum >= 4 && w[1] === 0 || sum >= 4 && w[2] === 0 || sum >= 4 && w[3] === 0 || sum >= 4 && w[4] === 0) {
         pbDiv.classList.add("forty")
-        textChange("Sua senha já é razoável, mas mais um caractere especial aumentaria sua complexidade.")
-    } else if (numbersUpperLower2Special.test(text) === true && LessThanTwelve.test(text)) {
-        pbDiv.classList.add("sixty")
-        textChange("Bela senha! Mas com 12 caracteres ficaria ainda melhor!")
-    }else if (numbersUpperLower2Special12.test(text) === true && LessThanEighteen.test(text)) {
-        pbDiv.classList.add("eighty")
-        textChange("Sua senha é incrível! A única forma de melhorar seria com mais caracteres!")
-    } else if (numbersUpperLower2Special18.test(text) === true) {
-        pbDiv.classList.add("ninety")
-        textChange("Parabéns! Sua senha cumpre todos os requerimentos desse site.")
-    } else if (space.test(text) === true) {
-        if (easterEgg.test(text) === true) {
-            pbDiv.classList.add("oneHundred")
-            textChange("Você descobriu o Easter Egg. Parabéns!!??!!??!!")
-            element.classList.add("easterEgg") 
-        } else {
-            pbDiv.classList.add("five")
-            textChange("Não é recomendável usar espaços em branco na sua senha.")
+    } else if (sum >= 4 && w[1] === 1 && w[2] === 1 && w[3] === 1 && w[4] === 1) {
+        if (sum === 5){
+            pbDiv.classList.add("forty")
+        }else if (sum === 6){
+            pbDiv.classList.add("fifty")
+        }else{
+            pbDiv.classList.add("eighty")
         }
-    } else {
-        removeClasses()
     }
 
-
-    function textChange(feedBack) {
-        typingTimer3 = setTimeout(tempo, 05)
-        function tempo() {
-            if (feedBack != element.innerHTML){
-                element.classList.remove("appear") 
-                typingTimer3 = setTimeout(tempo3, 500)
-                function tempo3(){
-                    element.innerHTML = feedBack
-                    element.classList.add("appear") 
-                }                
-            }else{
-                element.classList.add("appear") 
-            }        
-        }        
+    for (var i = 0; i < 5; i++) {
+        if (w[i] === 1) {
+            box[i].classList.add("green")
+            fasolid[i].classList.add("green")
+            p[i].classList.add("green")
+        } else {
+            box[i].classList.remove("green")
+            fasolid[i].classList.remove("green")
+            p[i].classList.remove("green")
+        }
     }
-}
 
-var eye = document.getElementsByClassName("eye")[0];
-eye.addEventListener("click", teste)
-
-function teste() {
-    eye.classList.toggle("anim")
-
-
-    if (input.type === "text") { 
-        input.type = "password";
-    } else {
-        input.type = "text" }
-    
-    
 }
 
 
+function textChange(feedBack) {
+    var element = document.getElementById("feedBack")
+    typingTimer3 = setTimeout(tempo, 05)
+    function tempo() {
+        if (feedBack != element.innerHTML) {
+            element.classList.remove("appear")
+            typingTimer3 = setTimeout(tempo3, 300)
+            function tempo3() {
+                element.innerHTML = feedBack
+                element.classList.add("appear")
+            }
+        } else {
+            element.classList.add("appear")
+        }
+    }
+}
 
 
+function removeClasses() {
+    pbDiv.classList.add("zero")
+    typingTimer3 = setTimeout(teste, 101)
+    function teste() {
+        var element = document.getElementById("feedBack")
+        element.classList.remove("appear")
+        element.classList.remove("easterEgg")
+        console.log("primeiro")
+    }
+    for (var i = 0; i < 5; i++) {
+        box[i].classList.remove("appear")
+        fasolid[i].classList.remove("appear")
+        p[i].classList.remove("appear")
+    }
+}
