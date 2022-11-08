@@ -22,26 +22,74 @@
         <div class="introDiv">
             <div class="textsIntro">
                 <p class="titleIntro">Verifique sua senha</p>
-                <p class="textIntro">Uma senha forte é uma das melhores formas de garantir a sua segurança digital. Digite Abaixo uma senha para ser analisada por um site estático e sem banco de dados.<br></p>
+                <p class="textIntro">Uma senha forte é uma das melhores formas de garantir a sua segurança digital.
+                    Digite Abaixo uma senha para ser analisada por um site estático e sem banco de dados.<br></p>
                 <p class="warningIntro">Esse site não usa banco de dados e não armazena sua senha.</p>
             </div>
-            <div class="imageDiv">        
-                <img src="https://cdn-icons-png.flaticon.com/512/421/421648.png" class="imageIntro" alt="">      
-            </div>            
-        </div>           
+            <div class="imageDiv">
+                <img src="https://cdn-icons-png.flaticon.com/512/421/421648.png" class="imageIntro" alt="">
+            </div>
+        </div>
         <div class="uxDiv">
             <div class="inputDiv">
-                <div class="teste"><input type="password" class="input" id="input">  <div class="size"><div class="eye"></div></div></div>                   
-                <div class="pbDiv" id="pbDiv" >
+                <div class="teste"><input type="password" class="input" id="input">
+                    <div class="size">
+                        <div class="eye"></div>
+                    </div>
+                </div>
+                <div class="pbDiv" id="pbDiv">
                     <div class="pb">
-                    </div>   
-                </div>               
+                    </div>
+                </div>
             </div>
-            <div class="divFeedback"><p class="feedBack" id="feedBack">s</p></div>
+            <div class="iconsDiv">
+                <div class="box">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="fa-solid">
+                        <path
+                            d="M304 160c0-70.7-57.3-128-128-128H144C73.3 32 16 89.3 16 160c0 34.6 13.7 66 36 89C20.5 272.3 0 309.8 0 352c0 70.7 57.3 128 128 128h64c70.7 0 128-57.3 128-128c0-42.2-20.5-79.7-52-103c22.3-23 36-54.4 36-89zM176.1 288H192c35.3 0 64 28.7 64 64s-28.7 64-64 64H128c-35.3 0-64-28.7-64-64s28.7-64 64-64h15.9c0 0 .1 0 .1 0h32c0 0 .1 0 .1 0zm0-64c0 0 0 0 0 0H144c0 0 0 0 0 0c-35.3 0-64-28.7-64-64c0-35.3 28.7-64 64-64h32c35.3 0 64 28.7 64 64c0 35.3-28.6 64-64 64z" />
+                    </svg>
+                    <p class="p">Oito Caracteres</p>
+                </div>
+                <div class="box">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="fa-solid">
+                        <path
+                            d="M304 160c0-70.7-57.3-128-128-128H144C73.3 32 16 89.3 16 160c0 34.6 13.7 66 36 89C20.5 272.3 0 309.8 0 352c0 70.7 57.3 128 128 128h64c70.7 0 128-57.3 128-128c0-42.2-20.5-79.7-52-103c22.3-23 36-54.4 36-89zM176.1 288H192c35.3 0 64 28.7 64 64s-28.7 64-64 64H128c-35.3 0-64-28.7-64-64s28.7-64 64-64h15.9c0 0 .1 0 .1 0h32c0 0 .1 0 .1 0zm0-64c0 0 0 0 0 0H144c0 0 0 0 0 0c-35.3 0-64-28.7-64-64c0-35.3 28.7-64 64-64h32c35.3 0 64 28.7 64 64c0 35.3-28.6 64-64 64z" />
+                    </svg>
+                    <p class="p">Números</p>
+                </div>
+                <div class="box">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="fa-solid">
+                        <path
+                            d="M183.6 42.4C177.5 35.8 169 32 160 32s-17.5 3.8-23.6 10.4l-88 96c-11.9 13-11.1 33.3 2 45.2s33.3 11.1 45.2-2L128 146.3V448c0 17.7 14.3 32 32 32s32-14.3 32-32V146.3l32.4 35.4c11.9 13 32.2 13.9 45.2 2s13.9-32.2 2-45.2l-88-96zM320 320c0 17.7 14.3 32 32 32h50.7l-73.4 73.4c-9.2 9.2-11.9 22.9-6.9 34.9s16.6 19.8 29.6 19.8H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H429.3l73.4-73.4c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8H352c-17.7 0-32 14.3-32 32zM416 32c-12.1 0-23.2 6.8-28.6 17.7l-64 128-16 32c-7.9 15.8-1.5 35 14.3 42.9s35 1.5 42.9-14.3l7.2-14.3h88.4l7.2 14.3c7.9 15.8 27.1 22.2 42.9 14.3s22.2-27.1 14.3-42.9l-16-32-64-128C439.2 38.8 428.1 32 416 32zM395.8 176L416 135.6 436.2 176H395.8z" />
+                    </svg>
+                    <p class="p">Letra Maiúscula</p>
+                </div>
+                <div class="box">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="fa-solid">
+                        <path
+                            d="M183.6 469.6C177.5 476.2 169 480 160 480s-17.5-3.8-23.6-10.4l-88-96c-11.9-13-11.1-33.3 2-45.2s33.3-11.1 45.2 2L128 365.7V64c0-17.7 14.3-32 32-32s32 14.3 32 32V365.7l32.4-35.4c11.9-13 32.2-13.9 45.2-2s13.9 32.2 2 45.2l-88 96zM320 320c0-17.7 14.3-32 32-32H480c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9L429.3 416H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H352c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9L402.7 352H352c-17.7 0-32-14.3-32-32zM416 32c12.1 0 23.2 6.8 28.6 17.7l64 128 16 32c7.9 15.8 1.5 35-14.3 42.9s-35 1.5-42.9-14.3L460.2 224H371.8l-7.2 14.3c-7.9 15.8-27.1 22.2-42.9 14.3s-22.2-27.1-14.3-42.9l16-32 64-128C392.8 38.8 403.9 32 416 32zM395.8 176h40.4L416 135.6 395.8 176z" />
+                    </svg>
+                    <p class="p">Letra Minúscula</p>
+                </div>
+                <div class="box">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="fa-solid">
+                        <path
+                            d="M256 64C150 64 64 150 64 256s86 192 192 192c17.7 0 32 14.3 32 32s-14.3 32-32 32C114.6 512 0 397.4 0 256S114.6 0 256 0S512 114.6 512 256v32c0 53-43 96-96 96c-29.3 0-55.6-13.2-73.2-33.9C320 371.1 289.5 384 256 384c-70.7 0-128-57.3-128-128s57.3-128 128-128c27.9 0 53.7 8.9 74.7 24.1c5.7-5 13.1-8.1 21.3-8.1c17.7 0 32 14.3 32 32v80 32c0 17.7 14.3 32 32 32s32-14.3 32-32V256c0-106-86-192-192-192zm64 192c0-35.3-28.7-64-64-64s-64 28.7-64 64s28.7 64 64 64s64-28.7 64-64z" />
+                    </svg>
+                    <p class="p">Caractere Especial</p>
+                </div>
+
+            </div>
+            <div class="divFeedback">
+                <p class="feedBack" id="feedBack">s</p>
+            </div>
         </div>
         <div class="divWarningStudent">
-                <p class="warningStudent">Esse site foi feito por um estudante para demonstrar conhecimento em linguagens de programação, ele não deve ser usado como meio de garantir sua segurança digital.<br></p>
-    </div>  
+            <p class="warningStudent">
+                Esse site foi feito por um estudante para demonstrar conhecimento em linguagens de
+                programação, ele não deve ser usado como meio de garantir sua segurança digital.
+            <br></p>
+        </div>
 </body>
 
 </html>
