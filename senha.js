@@ -39,7 +39,6 @@ input.addEventListener("keydown", (event) => {
 
 function check() {
     var text = input.value
-    console.log(text.length)
     if (text.length === 0) {
         colors([0, 0, 0, 0, 0])
         removeClasses()
@@ -49,66 +48,33 @@ function check() {
             fasolid[i].classList.add("appear")
             p[i].classList.add("appear")
         }
+
         var lessThanEight = /^.{0,7}$/
         var numbers = /[0-9]/;
         var upper = /[A-Z]/;
         var lower = /[a-z]/;
         var special = /(?:.*[\W]){1}/;
         var special2 = /(?:.*[\W]){2}/;
-        var twelve = /^.{12,17}$/;
-        var eighteen = /^.{18,}$/;
+        var fourteen = /^.{14,}$/;
         var easterEgg = /^Abaixo uma senha para ser analisada por um site estático e sem banco de dados./g
 
-
+        var tests = [numbers,upper,lower,special,special2,fourteen]
         var array = []
         if (lessThanEight.test(text) === true) {
             array.push(0)
             textChange("Uma boa senha tem pelo menos 8 caracteres.")
         } else {
             array.push(1)
-            if (numbers.test(text) === true) {
-                array.push(1)
-            } else {
-                array.push(0)
+            for (var i = 0; i < 6; i++){
+                if (tests[i].test(text) === true){
+                    array.push(1)
+                }else{
+                    array.push(0)
+                }
             }
-
-            if (upper.test(text) === true) {
-                array.push(1)
-            } else {
-                array.push(0)
-            }
-
-            if (lower.test(text) === true) {
-                array.push(1)
-            } else {
-                array.push(0)
-            }
-
-            if (special.test(text) === true) {
-                array.push(1)
-
-            } else {
-                array.push(0)
-            }
-
-            if (special2.test(text) === true) {
-                array.push(1)
-
-            } else {
-                array.push(0)
-            }
-
-            if (eighteen.test(text) === true) {
-                array.push(1)
-
-            } else {
-                array.push(0)
-            }
-
-
         }
+
         colors(array)
-        console.log(array[5])
         if (array[1] === 0) {
             textChange("Tente adicionar números em sua senha")
         } else {
@@ -126,7 +92,7 @@ function check() {
                                 textChange("Sua senha preenche os requisitos mínimos de qualidade. Para maior segurança é recomendável usar mais um caractere especial.")
                             }else{
                                 if (array[6] === 0){
-                                    textChange("Sua senha ficaria mais complexa com 18 caracteres ou mais")
+                                    textChange("Sua senha ficaria mais complexa com 14 caracteres ou mais")
                                 }else{
                                     textChange("Sua senha é ótima.")
                                 }
@@ -145,7 +111,7 @@ function colors(w) {
     while (classList.length > 1) {
         classList.remove(classList.item(1))
     }
-    console.log(sum)
+    
     if (sum === 2) {
         pbDiv.classList.add("ten")
     } else if (sum === 3) {
@@ -173,7 +139,6 @@ function colors(w) {
             p[i].classList.remove("green")
         }
     }
-
 }
 
 
@@ -202,7 +167,6 @@ function removeClasses() {
         var element = document.getElementById("feedBack")
         element.classList.remove("appear")
         element.classList.remove("easterEgg")
-        console.log("primeiro")
     }
     for (var i = 0; i < 5; i++) {
         box[i].classList.remove("appear")
