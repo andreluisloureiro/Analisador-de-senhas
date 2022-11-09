@@ -38,17 +38,23 @@ input.addEventListener("keydown", (event) => {
 
 
 function check() {
+    let introDiv = element = document.getElementsByClassName("introDiv")[0]
+    let imageIntro = element = document.getElementsByClassName("imageIntro")[0]
     var text = input.value
     if (text.length === 0) {
         colors([0, 0, 0, 0, 0])
         removeClasses()
+        introDiv.classList.remove("anim")
+        imageIntro.classList.remove("anim")
     } else {
         for (var i = 0; i < 5; i++) {
             box[i].classList.add("appear")
             fasolid[i].classList.add("appear")
             p[i].classList.add("appear")
         }
-
+        imageIntro.classList.add("anim")
+        introDiv.classList.add("anim")
+        console.log(introDiv)
         var lessThanEight = /^.{0,7}$/
         var numbers = /[0-9]/;
         var upper = /[A-Z]/;
@@ -144,12 +150,12 @@ function colors(w) {
 
 function textChange(feedBack) {
     var element = document.getElementById("feedBack")
-    typingTimer3 = setTimeout(tempo, 05)
-    function tempo() {
+    typingTimer3 = setTimeout(timer, 05)
+    function timer() {
         if (feedBack != element.innerHTML) {
             element.classList.remove("appear")
-            typingTimer3 = setTimeout(tempo3, 300)
-            function tempo3() {
+            typingTimer3 = setTimeout(timer, 400)
+            function timer() {
                 element.innerHTML = feedBack
                 element.classList.add("appear")
             }
@@ -161,9 +167,11 @@ function textChange(feedBack) {
 
 
 function removeClasses() {
+    let introDiv = element = document.getElementsByClassName("feedBack")[0]
+    console.log()
     pbDiv.classList.add("zero")
-    typingTimer3 = setTimeout(teste, 101)
-    function teste() {
+    typingTimer3 = setTimeout(erase, 100)
+    function erase() {
         var element = document.getElementById("feedBack")
         element.classList.remove("appear")
         element.classList.remove("easterEgg")
