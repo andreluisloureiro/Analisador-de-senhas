@@ -40,10 +40,12 @@ input.addEventListener("keydown", (event) => {
 function check() {
     let introDiv = element = document.getElementsByClassName("introDiv")[0]
     let imageIntro = element = document.getElementsByClassName("imageIntro")[0]
+    let container = element = document.getElementsByClassName("container")[0]
     var text = input.value
     if (text.length === 0) {
         colors([0, 0, 0, 0, 0])
         removeClasses()
+        container.classList.remove("anim")
         introDiv.classList.remove("anim")
         imageIntro.classList.remove("anim")
     } else {
@@ -52,6 +54,7 @@ function check() {
             fasolid[i].classList.add("appear")
             p[i].classList.add("appear")
         }
+        container.classList.add("anim")
         imageIntro.classList.add("anim")
         introDiv.classList.add("anim")
         console.log(introDiv)
