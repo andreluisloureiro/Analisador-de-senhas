@@ -104,7 +104,9 @@ header {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    transition: 800ms
 }
+
 
 .introDiv {
     display: flex;
@@ -500,6 +502,7 @@ input:focus {
 }
 
 @media (max-width : 480px) {
+
     :root {
         --containner-height: max(1.6vw, 18px);
     }
@@ -531,6 +534,20 @@ input:focus {
 
     .titleIntro {
         font-size: max(3vw, 22px);
+    }
+
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 20vh;
+        transition: 800ms
+    }
+    
+    .container.anim {
+        margin-bottom: 40vh;
     }
 
     .imageDiv {
@@ -590,6 +607,14 @@ input:focus {
         height: 7vw;
         font-weight: 400;
         opacity: 100%;
+    }
+
+    .divWarningStudent {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 98vw;
     }
 
 
