@@ -154,7 +154,7 @@ function textChange(feedBack) {
     function timer() {
         if (feedBack != element.innerHTML) {
             element.classList.remove("appear")
-            typingTimer3 = setTimeout(timer, 400)
+            typingTimer3 = setTimeout(timer, 600)
             function timer() {
                 element.innerHTML = feedBack
                 element.classList.add("appear")
