@@ -126,9 +126,9 @@ function colors(w) {
         pbDiv.classList.add("forty")
     } else if (sum >= 4 && w[1] === 1 && w[2] === 1 && w[3] === 1 && w[4] === 1) {
         if (sum === 5){
-            pbDiv.classList.add("forty")
-        }else if (sum === 6){
             pbDiv.classList.add("fifty")
+        }else if (sum === 6){
+            pbDiv.classList.add("sixty")
         }else{
             pbDiv.classList.add("eighty")
         }
