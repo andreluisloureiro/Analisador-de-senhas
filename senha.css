@@ -132,6 +132,7 @@ header {
     text-align: left;
     flex-direction: column;
     width: 40vw;
+    pointer-events:none;
 }
 
 .titleIntro {
@@ -167,6 +168,7 @@ header {
     flex-direction: row;
     font-size: var(--containner-height);
     margin: 0px;
+    pointer-events: none;
 }
 
 .imageDiv {
@@ -176,6 +178,7 @@ header {
     margin: 40px;
     height: 23vw;
     width: 23vw;
+    pointer-events:none;
 }
 
 .imageIntro {
@@ -185,6 +188,7 @@ header {
 
 .imageIntro.anim {
     height: 0vw;
+    pointer-events:none;
 }
 
 .uxDiv {
